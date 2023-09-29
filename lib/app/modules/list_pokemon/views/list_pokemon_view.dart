@@ -32,7 +32,9 @@ class ListPokemonView extends GetView<ListPokemonController> {
                     floating: true,
                     actions: [
                       IconButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Get.toNamed(Routes.SEARCH_POKEMON);
+                          },
                           icon: const Icon(Icons.search_outlined))
                     ],
                   ),

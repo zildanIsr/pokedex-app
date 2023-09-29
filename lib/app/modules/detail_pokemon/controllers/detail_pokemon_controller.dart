@@ -3,12 +3,16 @@ import 'package:get/get.dart';
 
 class DetailPokemonController extends GetxController {
   var pokeDetail = {}.obs;
+  var isLoading = false.obs;
   final dio = Dio();
 
-  void fetchDetailPokeSpecies(String url) async {
+  fetchDetailPokeSpecies(String url) async {
+    isLoading(true);
     try {
       final response = await dio.get(url);
       pokeDetail.value = response.data;
+
+      isLoading(false);
     } catch (e) {
       rethrow;
     }

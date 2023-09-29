@@ -6,6 +6,8 @@ import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/list_pokemon/bindings/list_pokemon_binding.dart';
 import '../modules/list_pokemon/views/list_pokemon_view.dart';
+import '../modules/search_pokemon/bindings/search_pokemon_binding.dart';
+import '../modules/search_pokemon/views/search_pokemon_view.dart';
 
 part 'app_routes.dart';
 
@@ -29,6 +31,11 @@ class AppPages {
       name: _Paths.DETAIL_POKEMON,
       page: () => const DetailPokemonView(),
       binding: DetailPokemonBinding(),
+    ),
+    GetPage(
+      name: _Paths.SEARCH_POKEMON,
+      page: () => const SearchPokemonView(),
+      binding: SearchPokemonBinding(),
     ),
   ];
 }

@@ -144,8 +144,36 @@ class DetailPokemonView extends GetView<DetailPokemonController> {
                                             ],
                                           )),
                                     ]),
+                                    TableRow(children: [
+                                      const Padding(
+                                        padding: EdgeInsets.symmetric(
+                                            vertical: 14.0),
+                                        child: Text(
+                                          'Egg Group',
+                                          style: TextStyle(
+                                              fontSize: 18,
+                                              color: Colors.black38),
+                                        ),
+                                      ),
+                                      Obx(
+                                        () => Padding(
+                                            padding: const EdgeInsets.symmetric(
+                                                vertical: 14.0),
+                                            child: !controller.isLoading.value
+                                                ? Text(
+                                                    controller.pokeDetail[
+                                                            'egg_groups'][0]
+                                                        ['name'],
+                                                    style: const TextStyle(
+                                                        fontSize: 18,
+                                                        color: Colors.black87))
+                                                : const Text('Egg')),
+                                      )
+                                    ]),
                                   ],
                                 )),
+
+                            // Base Status Section
                             Padding(
                                 padding: const EdgeInsets.only(top: 24.0),
                                 child: Row(
@@ -160,7 +188,7 @@ class DetailPokemonView extends GetView<DetailPokemonController> {
                                                 vertical: 10.0),
                                             child: Text(
                                               i['stat']['name'],
-                                              style: TextStyle(
+                                              style: const TextStyle(
                                                   fontSize: 18,
                                                   color: Colors.black38),
                                             ),
@@ -180,7 +208,7 @@ class DetailPokemonView extends GetView<DetailPokemonController> {
                                                 vertical: 10.0),
                                             child: Text(
                                               i['base_stat'].toString(),
-                                              style: TextStyle(
+                                              style: const TextStyle(
                                                   fontSize: 18,
                                                   color: Colors.black87,
                                                   fontWeight: FontWeight.w600),
@@ -210,7 +238,6 @@ class DetailPokemonView extends GetView<DetailPokemonController> {
                                     ),
                                   ],
                                 )),
-                            const Icon(Icons.directions_bike),
                           ],
                         ),
                       )),
